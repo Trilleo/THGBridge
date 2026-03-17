@@ -5,12 +5,13 @@ module.exports = async (client, jsonMsg) => {
 
     // Filter for guild chat messages
     if (msg.includes('[Guild]')) {
-        bridge.discordClient.channels.fetch(bridge.discordChannelId)
-            .then(channel => {
-                // Clean up Minecraft formatting codes (§c, §6, etc.)
-                const cleanMsg = msg.replace(/§./g, '');
-                channel.send(`\`\`\`${cleanMsg}\`\`\``);
-            })
-            .catch(console.error);
+        try {
+            const channel = await bridge.discordClient.channels.fetch(bridge.discordChannelId);
+            // Clean up Minecraft formatting codes (§c, §6, etc.)
+            const cleanMsg = msg.replace(/§./g, '');
+            await channel.send(`\`\`\`${cleanMsg}\`\`\``);
+        } catch (error) {
+            console.error(error);
+        }
     }
 };

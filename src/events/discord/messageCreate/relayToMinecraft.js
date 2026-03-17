@@ -1,6 +1,6 @@
 const bridge = require('../../../bridge');
 
-module.exports = async (client, message) => {
+module.exports = (client, message) => {
     // Ignore bot messages and wrong channel
     if (message.author.bot || message.channel.id !== bridge.discordChannelId) return;
 
