@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const mineflayer = require('mineflayer');
 const { Authflow } = require('prismarine-auth');
