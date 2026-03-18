@@ -22,7 +22,7 @@ module.exports = {
         try {
             await interaction.editReply('🔄 Connecting to Hypixel...');
             await createMcBot();
-            await interaction.editReply('✅ Bot is connecting to Hypixel...');
+            await interaction.editReply('✅ Successfully initiated connection to Hypixel.');
         } catch (error) {
             console.error('Login command error:', error);
             await interaction.editReply('❌ Failed to connect to Hypixel. Check the console for details.');

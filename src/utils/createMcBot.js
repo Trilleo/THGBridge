@@ -27,11 +27,11 @@ async function createMcBot() {
     bridge.mcBot = mcBot;
     bridge.mcBotConnected = false;
 
-    mcBot.once('spawn', () => {
+    mcBot.on('spawn', () => {
         bridge.mcBotConnected = true;
     });
 
-    mcBot.once('end', () => {
+    mcBot.on('end', () => {
         bridge.mcBotConnected = false;
     });
 
