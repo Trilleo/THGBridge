@@ -25,7 +25,7 @@ module.exports = {
         });
 
         const messageListener = (jsonMsg) => {
-            collectedMessages.push(jsonMsg.toString());
+            collectedMessages.push(jsonMsg.toMotd());
             // Reset idle timer: resolve once no message arrives for 1 second
             if (idleTimeout) clearTimeout(idleTimeout);
             idleTimeout = setTimeout(() => resolveCollector(), 1000);
@@ -106,6 +106,11 @@ function parseGuildList(rawMessages) {
             if (!ranks.has(currentRank)) {
                 ranks.set(currentRank, []);
             }
+            continue;
+        }
+
+        // Skip summary lines and separators that appear after rank sections
+        if (/^-+$/.test(trimmed) || /^(Total|Online|Offline) Members:/.test(trimmed) || /^Guild Name:/.test(trimmed)) {
             continue;
         }
 
