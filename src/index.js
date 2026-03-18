@@ -15,7 +15,7 @@ async function start() {
     });
 
     const token = process.env.DISCORD_TOKEN;
-    if (!token) throw new Error('Missing DISCORD_TOKEN in .env');
+    if (!token) throw new Error('Missing DISCORD_TOKEN');
 
     bridge.discordClient = discordClient;
     bridge.discordChannelId = process.env.DISCORD_CHANNEL_ID;
