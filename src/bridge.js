@@ -3,6 +3,8 @@ const bridge = {
     mcBot: null,
     discordClient: null,
     discordChannelId: null,
+    mcBotConnected: false,
+    reconnecting: false,
 };
 
 module.exports = bridge;
