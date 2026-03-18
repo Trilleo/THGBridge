@@ -1,1 +1,1 @@
-# Bridge bot for The Hypixel Guardians
+# JavaScript Bridge Bot for Hypixel

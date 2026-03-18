@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/THGBridge.iml" filepath="$PROJECT_DIR$/.idea/THGBridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TriBridge.iml" filepath="$PROJECT_DIR$/.idea/TriBridge.iml" />
     </modules>
   </component>
 </project>
