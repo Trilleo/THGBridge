@@ -6,8 +6,6 @@ const bridge = require('./bridge');
 const createMcBot = require('./utils/createMcBot');
 
 async function start() {
-    await createMcBot();
-
     const discordClient = new Client({
         intents: [
             GatewayIntentBits.Guilds,
@@ -25,6 +23,8 @@ async function start() {
     eventHandler(discordClient, path.join(__dirname, 'events', 'discord'));
 
     await discordClient.login(token);
+
+    await createMcBot();
 }
 
 start().catch((error) => {
