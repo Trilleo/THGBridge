@@ -18,16 +18,18 @@ module.exports = {
         let resolveCollector;
         let idleTimeout;
 
+        // Create the promise first to ensure resolveCollector is set
+        // before any listener or timeout callback can fire
+        const collectorPromise = new Promise((resolve) => {
+            resolveCollector = resolve;
+        });
+
         const messageListener = (jsonMsg) => {
             collectedMessages.push(jsonMsg.toString());
             // Reset idle timer: resolve once no message arrives for 1 second
             if (idleTimeout) clearTimeout(idleTimeout);
             idleTimeout = setTimeout(() => resolveCollector(), 1000);
         };
-
-        const collectorPromise = new Promise((resolve) => {
-            resolveCollector = resolve;
-        });
 
         // Hard timeout of 5 seconds in case messages keep flowing
         const maxTimeout = setTimeout(() => resolveCollector(), 5000);
