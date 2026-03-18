@@ -7,5 +7,5 @@ module.exports = (client, message) => {
     // Send to Hypixel guild chat
     const discordUser = message.author.username;
     const discordMsg = message.content;
-    bridge.mcBot.chat(`/gc [Discord] ${discordUser}: ${discordMsg}`);
+    bridge.mcBot.chat(`/gc ${discordUser}: ${discordMsg}`);
 };
