@@ -6,7 +6,8 @@ module.exports = async (client, jsonMsg) => {
     // Clean up Minecraft formatting codes (§c, §6, etc.)
     const cleanMsg = msg.replace(/§./g, '');
 
-    // Match guild chat messages: Guild > [Rank] Username [GuildRank]: message
+    // Match guild chat: Guild > [Rank] Username [GuildRank]: message
+    // Ranks (e.g. [VIP+], [MVP++]) and guild ranks (e.g. [Member], [Officer]) are optional
     const chatMatch = cleanMsg.match(/Guild > (?:\[.+?\] )?(\w{1,16})(?: \[.+?\])?: (.+)/);
     if (chatMatch) {
         const username = chatMatch[1];
@@ -17,7 +18,7 @@ module.exports = async (client, jsonMsg) => {
             const embed = new EmbedBuilder()
                 .setAuthor({
                     name: username,
-                    iconURL: `https://mc-heads.net/avatar/${username}`,
+                    iconURL: `https://mc-heads.net/avatar/${encodeURIComponent(username)}`,
                 })
                 .setDescription(content)
                 .setColor(0x2ECC71)
@@ -43,7 +44,7 @@ module.exports = async (client, jsonMsg) => {
             const embed = new EmbedBuilder()
                 .setAuthor({
                     name: username,
-                    iconURL: `https://mc-heads.net/avatar/${username}`,
+                    iconURL: `https://mc-heads.net/avatar/${encodeURIComponent(username)}`,
                 })
                 .setDescription(`${emoji} **${username}** ${action}.`)
                 .setColor(color)
