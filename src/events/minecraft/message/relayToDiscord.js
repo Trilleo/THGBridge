@@ -13,6 +13,9 @@ module.exports = async (client, jsonMsg) => {
         const username = chatMatch[1];
         const content = chatMatch[2];
 
+        // Ignore messages sent by the bot itself to prevent relay loops
+        if (username === bridge.mcBot?.username) return;
+
         try {
             const channel = await bridge.discordClient.channels.fetch(bridge.discordChannelId);
             const embed = new EmbedBuilder()
