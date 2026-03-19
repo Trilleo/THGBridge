@@ -54,7 +54,12 @@ On the first launch the bot will open a Microsoft authentication flow for the Mi
 
 | Command | Category | Description |
 |---|---|---|
+| `/invite <username>` | Management | Invite a player to the Hypixel guild (admin only) |
+| `/kick <username> [reason]` | Management | Kick a member from the Hypixel guild (admin only) |
+| `/promote <username>` | Management | Promote a member in the Hypixel guild (admin only) |
+| `/demote <username>` | Management | Demote a member in the Hypixel guild (admin only) |
 | `/login` | Management | Connect the Minecraft bot to Hypixel |
+| `/adminrole add/remove <role>` | Management | Configure the global admin roles for the bot (server admin only) |
 | `/online` | Information | Show the currently online guild members |
 | `/ping` | Information | Display Discord API latency and Minecraft connection status |
 | `/help` | Information | Browse all available commands by category |
