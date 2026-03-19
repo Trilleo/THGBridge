@@ -16,5 +16,5 @@ module.exports = (client) => {
         } finally {
             bridge.reconnecting = false;
         }
-    }, 60_000);
+    }, 10_000);
 };
