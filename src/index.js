@@ -19,6 +19,7 @@ async function start() {
 
     bridge.discordClient = discordClient;
     bridge.discordChannelId = process.env.DISCORD_CHANNEL_ID;
+    bridge.logChannelId = process.env.LOG_CHANNEL;
 
     eventHandler(discordClient, path.join(__dirname, 'events', 'discord'));
 

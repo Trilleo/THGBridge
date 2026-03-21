@@ -3,6 +3,7 @@ const bridge = {
     mcBot: null,
     discordClient: null,
     discordChannelId: null,
+    logChannelId: null,
     mcBotConnected: false,
     reconnecting: false,
 };
