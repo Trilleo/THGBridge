@@ -31,6 +31,7 @@ A Node.js bot that relays messages between a Discord channel and a Hypixel guild
    ```env
    DISCORD_TOKEN=your_discord_bot_token
    DISCORD_CHANNEL_ID=your_discord_channel_id
+   LOG_CHANNEL=your_log_channel_id
    MINECRAFT_USERNAME=your_minecraft_email
    ```
 
@@ -38,6 +39,7 @@ A Node.js bot that relays messages between a Discord channel and a Hypixel guild
    |---|---|
    | `DISCORD_TOKEN` | Bot token from the Discord Developer Portal |
    | `DISCORD_CHANNEL_ID` | ID of the Discord channel where messages will be relayed |
+   | `LOG_CHANNEL` | ID of the Discord channel where admin log notifications (e.g. disconnections, reconnections) will be sent |
    | `MINECRAFT_USERNAME` | The email address of the Microsoft account used for Minecraft |
 
 ## Usage
