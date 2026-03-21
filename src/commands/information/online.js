@@ -35,7 +35,7 @@ module.exports = {
         const maxTimeout = setTimeout(() => resolveCollector(), 5000);
 
         mcBot.on('message', messageListener);
-        mcBot.chat('/guild list');
+        mcBot.chat('/guild online');
 
         await collectorPromise;
         clearTimeout(maxTimeout);
